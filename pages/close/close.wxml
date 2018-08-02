@@ -1,0 +1,88 @@
+<!--pages/close/close.wxml-->
+<view class="close">
+  <!-- 地址管理 -->
+  <view class="close-top" bindtap="bindtapAddressaa">
+    <view>
+      <image src="../../assets/address-02.png"></image>
+    </view>
+    <view class="close-xm" wx:if="{{!lists || lists.length != 0}}">
+      <view>
+        <view>姓名:
+          <text>{{lists.username}}</text>
+        </view>
+        <view>手机号:
+          <text>{{lists.userphone}}</text>
+        </view>
+      </view>
+      <view>地址:
+        <text>{{lists.address}}</text>
+      </view>
+    </view>
+    <view class="close-xm" style="line-height: 110rpx;" wx:if="{{lists.length == 0}}">请选择地址</view>
+    <view class="close-th">
+      <image src="../../assets/colse-th.png"></image>
+    </view>
+  </view>
+  <!-- 分割线 -->
+  <view class="close-hx">
+    <image src="../../assets/colse-hx.png"></image>
+  </view>
+  <!-- 商品 -->
+  <view class="close-shop">
+    <!-- 第一件 -->
+    <view class="close-shop-left" wx:for="{{datas}}" wx:key="{{index}}" data-shopid="{{item.shopId}}" bindtap="bindtapXq">
+      <view>
+        <image src="{{baseUrl}}{{item.shopimage}}"></image>
+      </view>
+      <view>
+        <view>{{item.shopName}}</view>
+        <view>规格："{{item.shopColor}} {{item.shopSize}}"</view>
+        <view>数量：{{item.shopNumber}}件</view>
+        <view>价格：￥
+          <text>{{item.shopMoney}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 卖家留言 -->
+  <view class="close-ly">
+    <view>买家留言</view>
+    <textarea bindinput="bindinputLiuyan" wx:if="{{mask.opacity == 0}}" value="{{liuYan}}" placeholder-style="font-size:34rpx;color:#666;"></textarea>
+  </view>
+</view>
+<!-- 底部 -->
+<view class="close-bottom">
+  <view>共
+    <text>{{datas.length}}</text>件 总计：￥
+    <text>{{shopmoney}}.00</text>
+  </view>
+  <view bindtap="showPopup">提交订单</view>
+</view>
+<!-- 弹窗 -->
+<view class="mask" style="opacity: {{mask.opacity}}; display: {{mask.display}};">
+  <view class="return-deposit" style="transform: {{returnDeposit.translateY}}; opacity: {{returnDeposit.opacity}};">
+    <view class="img-wapper">
+      <view>确认付款</view>
+      <view class="mask-money">
+        收货姓名：<text>{{lists.username}}</text>
+      </view>
+      <view class="mask-money">
+        收货电话：<text>{{lists.userphone}}</text>
+      </view>
+      <view class="mask-money">
+        收货地址：<text>{{lists.address}}</text>
+      </view>
+      <view class="mask-money">
+        支付金额：<text style="font-size: 44rpx;color: #f00;">￥{{shopmoney}}.00</text>
+      </view>
+    </view>
+    <view class="line"></view>
+    <view class="input-wapper b-color">
+      <input  placeholder-style="color:#666;font-size:34rpx;" type="password" bindinput="bindinputMoney" placeholder="请输入支付密码" />
+    </view>
+    <view class="btn" bindtap="bindtapTijiao">立即付款</view>
+    <view class="close1" bindtap="handleClosePopup">
+      <image src="../../assets/close.png" style="width: 120rpx;height: 120rpx;margin-top: 30rpx;"></image>
+    </view>
+  </view>
+</view>

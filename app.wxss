@@ -1,0 +1,14 @@
+/**app.wxss**/
+@import 'style/weui.wxss';
+.conter {
+	width: 100%;
+  height: 100%;
+  padding: 15rpx;
+  box-sizing: border-box;
+  overflow-x: hidden;
+} 
+page {
+	background: #f6f9fe;
+	color: #666;
+	font-size: 30rpx;
+}

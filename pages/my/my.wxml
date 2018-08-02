@@ -1,0 +1,78 @@
+<!--pages/my/my.wxml-->
+<view class="position">
+  <view class="index-top">
+    <view class="index-top-image">
+      <image src="../../assets/my-top.png"></image>
+    </view>
+    <view class="index-top-wz">
+      <view>
+        <view bindtap="bindtapXiugai">
+          <open-data type="userAvatarUrl"></open-data>
+        </view>
+        <view class="index-top-wz-name">
+          <view ><view style="width: 150rpx;overflow: hidden;"><open-data type="userNickName"></open-data></view><text>{{datas.userlevel}}</text></view>
+          <view bindtap="bindtapPhone">{{!datas.userphone || datas.userphone == null ? '请绑定手机号' : datas.userphone}}</view>
+          <view style="font-size: 32rpx;color: #fff;">注册时间：{{handletime}}</view>
+        </view>
+      </view>
+      <view bindtap="bindtapCode" class="my-tj">
+        <image src="../../assets/my-ewm.png"></image>
+        <view>推荐码</view>
+      </view>
+    </view>
+  </view>
+  <!--余额 -->
+  <view class="index-conter">
+    <view bindtap="bindtapItem" class="index-c-left">
+      <view>{{!datas.userfill || datas.userfill == null ? 0 : datas.userfill}}</view>
+      <view>我的团队</view>
+    </view>
+    <view bindtap="bindtapShang" class="index-c-left">
+      <view>{{!datas.usermoney || datas.usermoney == null ? 0 : datas.usermoney}}</view>
+      <view>商城币</view>
+    </view>
+    <view class="index-c-left" bindtap="bindtapIndex">
+      <view>{{!datas.bonusmoney || datas.bonusmoney == null ? 0 : datas.bonusmoney}}</view>
+      <view>收益</view>
+    </view>
+  </view>
+</view>
+<!-- 列表 -->
+<view class="my conter">
+  <navigator class="my-top" url="../order/order">
+    <view><image src="../../assets/my-b1.png"></image><text>消费记录</text></view>
+    <view><image src="../../assets/my-jt.png"></image></view>
+  </navigator>
+  <navigator class="my-top" url="../cart/cart">
+    <view><image src="../../assets/my-b2.png"></image><text>购物车</text></view>
+    <view><image src="../../assets/my-jt.png"></image></view>
+  </navigator>
+  <view bindtap="bindtapActive" class="my-top">
+    <view><image src="../../assets/my-b5.png"></image><text>个人信息修改</text></view>
+    <view><image src="../../assets/my-jt.png"></image></view>
+  </view>
+  <view bindtap="bindtapAddress" class="my-top">
+    <view><image src="../../assets/my-b3.png"></image><text>地址管理</text></view>
+    <view><image src="../../assets/my-jt.png"></image></view>
+  </view>
+  <navigator class="my-top" url="../withdraw/withdraw">
+    <view><image src="../../assets/my-b4.png"></image><text>充值记录</text></view>
+    <view><image src="../../assets/my-jt.png"></image></view>
+  </navigator>
+  <navigator class="my-top" url="../recharge/recharge">
+    <view><image src="../../assets/my-b4.png"></image><text>提现记录</text></view>
+    <view><image src="../../assets/my-jt.png"></image></view>
+  </navigator>
+  <view bindtap="bindtapPassword" class="my-top" >
+    <view><image src="../../assets/my-b5.png"></image><text>修改密码</text></view>
+    <view><image src="../../assets/my-jt.png"></image></view>
+  </view>
+  <view bindtap="bindtapFankui" class="my-top" >
+    <view><image src="../../assets/my-b4.png"></image><text>问题反馈</text></view>
+    <view><image src="../../assets/my-jt.png"></image></view>
+  </view>
+  <navigator class="my-top" url="../about/about">
+    <view><image src="../../assets/my-b5.png"></image><text>关于我们</text></view>
+    <view><image src="../../assets/my-jt.png"></image></view>
+  </navigator>
+</view>

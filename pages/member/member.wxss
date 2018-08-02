@@ -1,0 +1,53 @@
+/* pages/member/member.wxss */
+.member{
+	width: 100%;
+	height: auto;
+}
+.member-one{
+	width: 96%;
+	height: atuo;
+	padding: 20rpx 2%;
+	background-color: #fff;
+	margin-bottom: 20rpx;
+	display: flex;
+	justify-content: space-between;
+}
+.member-one>view:first-child{
+	font-size: 34rpx;
+	color: #666;
+	line-height: 50rpx;
+	flex: 1;
+}
+.member-one>view:first-child text{
+	font-size: 36rpx;
+	color: #333;
+	line-height: 50rpx;
+	flex: 1;
+}
+.member-one>view:nth-child(2){
+	width: 65rpx;
+	height: 65rpx;
+	margin-top: 45rpx;
+	text-align: center;
+	line-height: 65rpx;
+	font-size: 34rpx;
+	color: #666;
+	border-radius: 50%;
+	box-shadow: 0 0 10rpx #ccc;
+}
+.member-one>view:last-child{
+	width: 30rpx;
+	height: 50rpx;
+	margin-top: 50rpx;
+	padding-left: 40rpx;
+}
+.member-one>view:last-child image{
+	width: 30rpx;
+	height: 50rpx;
+}
+.member-qb{
+	font-size: 34rpx;
+	color: #666;
+	text-align: center;
+	margin:30rpx 0;
+}

@@ -1,0 +1,58 @@
+<!--pages/orderdetails/orderdetails.wxml-->
+<view class="order">
+  <!-- 地址管理 -->
+  <view class="close-top">
+    <view>
+      <image src="../../assets/address-02.png"></image>
+    </view>
+    <view class="close-xm">
+      <view>
+        <view>姓名:
+          <text>{{datas.username}}</text>
+        </view>
+        <view>手机号:
+          <text>{{datas.userphone}}</text>
+        </view>
+      </view>
+      <view>地址:
+        <text>{{datas.useraddress}}</text>
+      </view>
+    </view>
+  </view>
+  <!-- 分割线 -->
+  <view class="close-hx">
+    <image src="../../assets/colse-hx.png"></image>
+  </view>
+  <!-- 商品信息 -->
+  <view class="order-cen-left">
+    <view class="order-cen-shop">
+      <!-- 商品1 -->
+      <view class="shop-one" bindtap="bindtapShop"  data-goodsid="{{item.goodsid}}" data-status="{{item.status}}" wx:for="{{goods}}" wx:key="{{index}}">
+        <view>
+          <image src="{{baseUrl}}{{item.goodsimg}}"></image>
+        </view>
+        <view>
+          <view class="shop-one-title">{{item.goodsname}}</view>
+          <view>规格：“{{item.goodsattrid}}”</view>
+          <view>数量：{{item.goodsnums}}件</view>
+          <view class="shop-one-color">单价:￥
+            <text>{{item.goodsprice}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 总价 -->
+    <view class="order-zj">总价:￥
+      <text>{{datas.totalmoney}}</text>
+    </view>
+  </view>
+  <!-- 订单信息 -->
+  <view class="order-dd">
+    <view>下单时间：<text>{{datas.createtime}}</text></view>
+    <view>订单编号：<text>{{datas.orderno}}</text></view>
+    <view wx:if="{{datas.orderstatus == 1 ? false : true}}">快递名称：<text>{{datas.delivertype}}</text></view>
+    <view wx:if="{{datas.orderstatus == 1 ? false : true}}">物流单号：<text>{{datas.deliverno}}</text></view>
+    <view wx:if="{{datas.orderstatus == 1 ? false : true}}">发货时间：<text>{{datas.deliverytime}}</text></view>
+    <view>订单状态：<text>{{datas.orderstatus == 1 ? '待发货' : datas.orderstatus == 2 ? '已发货' : '已完成'}}</text></view>
+  </view>
+</view>

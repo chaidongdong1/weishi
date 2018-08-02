@@ -1,0 +1,16 @@
+<!--pages/member/member.wxml-->
+<view class="member">
+	<view class="member-one" wx:for="{{datas}}" wx:key="{{index}}" bindtap="bindtapXiaji" data-userId="{{item.userid}}" data-count="{{item.count}}">
+		<view>
+			<view>姓名：<text>{{!item.realname || item.realname == null ? item.username : item.realname}}</text></view>
+			<view>级别：<text>{{item.userlevel}}</text></view>
+			<view>推广ID：<text>{{item.userid*1+12538}}</text></view>
+		</view>
+		<view>{{item.count}}</view>
+		<view><image src="../../assets/member-jt.png"></image></view>
+	</view>
+	<!-- 已加载全部 -->
+	<view wx:if="{{totalPage == currPage}}" class="member-qb">已加载全部</view>
+</view>
+<!-- 当前没有数据 -->
+<view wx:if="{{!datas || datas.length == 0}}" class="member-qb">暂无数据</view>

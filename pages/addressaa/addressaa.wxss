@@ -1,0 +1,129 @@
+/* pages/address/address.wxss */
+.address{
+	width: 100%;
+	height: auto;
+}
+.address-top{
+	width: 100%;
+	height: 80rpx;
+	line-height: 80rpx;
+	display: flex;
+	justify-content: space-between;
+	box-shadow: 0 5rpx 10rpx #eee;
+	margin-bottom: 20rpx;
+}
+.address-top>view:first-child{
+	font-size: 36rpx;
+	color: #333;
+	display: flex;
+}
+.address-top>view:first-child image{
+	width: 35rpx;
+	height: 35rpx;
+	padding: 22rpx 20rpx;
+}
+.address-top>view:last-child image{
+	width: 20rpx;
+	height: 35rpx;
+	padding: 0 20rpx;
+}
+.addres{
+	margin-top: 20rpx;
+}
+.address-nr{
+	width: 100%;
+	height: auto;
+	margin-top: 20rpx;
+	box-shadow: 0 5rpx 10rpx #eee;
+	display: flex;
+}
+.address-nr>view:first-child{
+	width: 110rpx;
+	height: auto;
+}
+.address-nr>view:first-child image{
+	width: 50rpx;
+	height: 60rpx;
+	margin: 80rpx 30rpx 0 30rpx;
+}
+.address-nr>view:last-child{
+	width: 100rpx;
+	margin: 15rpx 0;
+	position: relative;
+}
+.add-sc image{
+	width: 50rpx;
+	height: 50rpx;
+	position: absolute;
+	top: 10rpx;
+	right: 20rpx;
+}
+.address-nr>view:nth-child(2){
+	flex: 1;
+}
+.address-nr>view:nth-child(2) view{
+	font-size: 38rpx;
+	color: #333;
+	margin-bottom: 5rpx;
+}
+.address-nr>view:nth-child(2) view text{
+	color: #555;
+	font-size: 36rpx;
+}
+/*空数据*/
+.index-kong{
+	width: 100%;
+	height: 100vh;
+	background-color: #fff;
+	overflow: hidden;
+}
+.index-kong-image{
+	margin: 0 212rpx;
+	padding-top: 200rpx;
+	width: 325rpx;
+	height: 330rpx;
+}
+.index-kong-image image{
+	width: 100%;
+	height: 100%;
+}
+.index-kong view:nth-child(2){
+	font-size: 38rpx;
+	color: #38434d;
+	text-align: center;
+	margin-top: 50rpx;
+}
+.index-kong view:nth-child(3){
+	font-size: 36rpx;
+	color: #9ca6ae;
+	text-align: center;
+	margin-top: 30rpx;
+}
+.index-kong-button{
+	width: 70%;
+	height: 80rpx;
+	line-height: 80rpx;
+	margin: 80rpx 15%;
+	background: linear-gradient(to right, #85d3ff, #2fa7fd);
+	box-shadow: 0 0 15rpx #ccc;
+	text-align: center;
+	border-radius: 50rpx;
+	display: flex;
+	justify-content: center;
+}
+.index-kong-button view{
+	font-size: 36rpx;
+	color: #fff;
+}
+.index-kong-button image{
+	width: 30rpx;
+	height: 30rpx;
+	margin-top: 25rpx;
+	margin-left: 15rpx;
+}
+.address-qb{
+	font-size: 34rpx;
+	color: #666;
+	text-align: center;
+	margin: 30rpx 0;
+}

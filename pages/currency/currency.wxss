@@ -1,0 +1,256 @@
+/* pages/currency/currency.wxss */
+.curr{
+	width: 100%;
+	height: auto;
+	margin-bottom: 150rpx;
+}
+.curr-left{
+	width: 96%;
+	height: auto;
+	background-color: #fff;
+	padding: 0 2%;
+	margin-bottom: 25rpx;
+}
+.curr-left>view{
+	font-size: 36rpx;
+	color: #555;
+}
+.curr-left>view:first-child{
+	display: flex;
+	font-size: 38rpx;
+	color: #555;
+	padding: 15rpx 0;
+	border-bottom: 1rpx solid #f1f1f1;
+	justify-content: space-between;
+}
+.curr-left>view>view:first-child{
+	width: 140rpx;
+}
+.curr-shou{
+	font-size: 40rpx;
+	color: #2fa7fd;
+}
+.curr-xiao{
+	font-size: 40rpx;
+	color: #e8380d;
+}
+.curr-left>view:nth-child(2){
+	padding: 20rpx 0 10rpx 0;
+	display: flex;
+	justify-content: space-between;
+}
+.curr-left>view:nth-child(3){
+	padding: 20rpx 0 10rpx 0;
+	display: flex;
+	justify-content: space-between;
+}
+.curr-left>view:last-child{
+	padding: 10rpx 0 20rpx 0;
+	display: flex;
+	justify-content: space-between;
+}
+.curr-cz{
+	width: 90%;
+	height: 120rpx;
+	background-color: #fff;
+	display: flex;
+	justify-content: space-between;
+	line-height: 120rpx;
+	padding: 0 5%;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	z-index: 999;
+	box-shadow: 0 0 10rpx #ccc;
+}
+.curr-cz>view:first-child{
+	font-size: 36rpx;
+	color: #555555;
+}
+.curr-cz>view:first-child text{
+	font-size: 50rpx;
+	color: #e8380d;
+}
+.curr-cz>view:last-child{
+	width: 220rpx;
+	height: 80rpx;
+	line-height: 80rpx;
+	text-align: center;
+	background-color: #3aadfd;
+	color: #fff;
+	margin-top: 20rpx;
+	font-size: 38rpx;
+	border-radius: 50rpx;
+	box-shadow: 0 0 10rpx #ddd;
+}
+.curr-qb{
+	font-size: 36rpx;
+	color: #999;
+	text-align: center;
+	margin:30rpx;
+}
+.index-kong{
+	width: 100%;
+	height: 100vh;
+	background-color: #fff;
+	overflow: hidden;
+}
+.index-kong-image{
+	margin: 0 212rpx;
+	padding-top: 200rpx;
+	width: 325rpx;
+	height: 330rpx;
+}
+.index-kong-image image{
+	width: 100%;
+	height: 100%;
+}
+.index-kong view:nth-child(2){
+	font-size: 38rpx;
+	color: #38434d;
+	text-align: center;
+	margin-top: 50rpx;
+}
+.index-kong view:nth-child(3){
+	font-size: 36rpx;
+	color: #9ca6ae;
+	text-align: center;
+	margin-top: 30rpx;
+}
+.curr-left-sj{
+	color: #38434d;
+	font-size: 36rpx;
+}
+/*弹窗*/
+.mask {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, .6);
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  transition: all ease .6s;
+}
+.return-deposit {
+  position: fixed;
+  width: 96%;
+  height: 840rpx;
+  background-color: #fff;
+  z-index: 10000;
+  border-radius: 20rpx;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: 80rpx auto 0;
+  transition: all ease-in-out .4s;
+}
+
+.img-wapper {
+  width: 90%;
+  height: auto;
+  margin: 0 auto 10rpx;
+  font-size: 36rpx;
+  color: #333;
+  line-height: 54rpx;
+}
+.f11-zhu{
+	font-size: 30rpx;
+	color: #e8380d;
+}
+
+.r-title {
+  margin-top: -30rpx;
+}
+
+.line {
+  height: 1px;
+  background-color: #f1f1f1;
+  margin: 20rpx 0;
+}
+
+.input-wapper {
+  width: 92%;
+  height: 100rpx;
+  border-radius: 10rpx;
+  margin: auto;
+  margin-bottom: 50rpx;
+  border: 2rpx solid #43b1fe;
+  background-color: #d5edff;
+  box-sizing: border-box;
+  font-size: 36rpx;
+}
+
+.input-wapper input {
+  width: 100%;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  height: 100rpx;
+  color: #000;
+}
+
+.btn {
+  width: 92%;
+  height: 80rpx;
+  border-radius: 40rpx;
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 34rpx;
+  color: #fff;
+  box-shadow: 0 0 12px rgba(0, 0, 0, .15);
+  margin: auto;
+  margin-bottom: 30rpx;
+  background: linear-gradient(to left, #2fa7fd, #85d3ff);
+}
+
+.close {
+  width: 100%;
+  height: 200rpx;
+  position: absolute;
+  bottom: -200rpx;
+  text-align: center;
+}
+.img-wapper>view:first-child{
+	text-align: center;
+	font-size: 46rpx;
+	color: #000;
+	margin: 40rpx 0;
+}
+.mask-left{
+	display: flex;
+	font-size: 36rpx;
+	color: #333;
+}
+.mask-left>view:first-child{
+	width: 240rpx;
+	height: auto;
+	display: flex;
+	justify-content: space-between;
+	font-size: 34rpx;
+	color: #666;
+}
+.mask-left>view:last-child{
+	flex: 1;
+}
+
+/*收益分类*/
+.index-cl{
+	width: 100%;
+	height: 100rpx;
+	background: linear-gradient(to right, #85d3ff , #2fa7fd);
+	line-height: 100rpx;
+	border-bottom: 1px solid #eee;
+	display: flex;
+}
+.index-cl>view{
+	width: 23%;
+	margin: 0 1%;
+	font-size: 34rpx;
+	color: #fff;
+	text-align:center;
+}
+.index-cl-active{
+	border-bottom: 3px solid #E94820;
+	box-sizing: border-box;
+}

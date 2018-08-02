@@ -1,0 +1,241 @@
+/* pages/activate/activate.wxss */
+.active{
+	width: 96%;
+	height: auto;
+	margin: 0 2%;
+}
+.active-a1{
+	width: auto;
+	height: 90rpx;
+	border-bottom:1px solid #f1f1f1;
+	padding: 0 20rpx;
+	display: flex;
+}
+.active-a1>view:first-child image{
+	width: 40rpx;
+	height: 40rpx;
+	padding: 25rpx 0;
+}
+.active-a1>view:nth-child(2){
+	width: 180rpx;
+	height: 100%;
+	line-height: 90rpx;
+	font-size: 36rpx;
+	color: #38434d;
+	display: flex;
+	padding-left: 25rpx;
+	justify-content: space-between;
+}
+.active-a1>view:last-child{
+	flex: 1;
+}
+.active-a1>view:last-child input{
+	width: 100%;
+	font-size: 34rpx;
+	color: #666;
+	height: 90rpx;
+	line-height: 90rpx;
+}
+.active-aaa{
+	font-size: 36rpx;
+	color: #333;
+	line-height: 90rpx;
+}
+.picker{
+	width: 100%;
+	height: 90rpx;
+	line-height: 90rpx;
+	font-size: 34rpx;
+	color: #666;
+}
+.active-button{
+	width: 80%;
+	height: 80rpx;
+	line-height: 80rpx;
+	background: linear-gradient(to right, #85d3ff, #2fa7fd);
+	margin: 50rpx 10%;
+	font-size: 36rpx;
+	color: #fff;
+	text-align: center;
+	border-radius: 50rpx;
+}
+.active-button image{
+	width: 30rpx;
+	height: 25rpx;
+	line-height: 80rpx;
+	padding-left: 15rpx;
+}
+
+/*弹窗*/
+.mask {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-color: #fff;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  transition: all ease .6s;
+}
+.return-deposit {
+  position: fixed;
+  width: 96%;
+  height: 400rpx;
+  background-color: #fff;
+  z-index: 10000;
+  border-radius: 20rpx;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: 400rpx auto 0;
+  transition: all ease-in-out .4s;
+}
+
+.img-wapper {
+  width: 85%;
+  height: auto;
+  margin: 0 auto 10rpx;
+  font-size: 36rpx;
+  color: #333;
+  padding-left: 40rpx;
+  line-height: 54rpx;
+}
+.f11-zhu{
+	font-size: 30rpx;
+	color: #e8380d;
+}
+
+.r-title {
+  margin-top: -30rpx;
+}
+
+.line {
+  height: 1px;
+  background-color: #f1f1f1;
+  margin: 20rpx 0;
+}
+
+.input-wapper {
+  width: 92%;
+  height: 100rpx;
+  border-radius: 10rpx;
+  margin: 80rpx auto;
+  border: 2rpx solid #43b1fe;
+  background-color: #d5edff;
+  box-sizing: border-box;
+  font-size: 36rpx;
+}
+
+.input-wapper input {
+  width: 100%;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  height: 100rpx;
+  color: #000;
+}
+
+.btn {
+  width: 92%;
+  height: 80rpx;
+  border-radius: 40rpx;
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 34rpx;
+  color: #fff;
+  box-shadow: 0 0 12px rgba(0, 0, 0, .15);
+  margin: auto;
+  margin-bottom: 30rpx;
+  background: linear-gradient(to left, #2fa7fd, #85d3ff);
+}
+
+.close {
+  width: 100%;
+  height: 200rpx;
+  position: absolute;
+  bottom: -200rpx;
+  text-align: center;
+}
+.img-wapper>view:first-child{
+	text-align: center;
+	font-size: 46rpx;
+	color: #000;
+	margin: 40rpx 0;
+}.mask-left{
+	display: flex;
+	font-size: 36rpx;
+	color: #333;
+}
+.mask-left>view:first-child{
+	width: 160rpx;
+	height: auto;
+	display: flex;
+	justify-content: space-between;
+	font-size: 34rpx;
+	color: #666;
+}
+.mask-left-ed{
+	font-size: 40rpx;
+	color: #2fa7fd;
+	flex: 1;
+}
+.mask-quanbu{
+	width: 180rpx;
+	height: 60rpx;
+	line-height: 60rpx;
+	text-align: center;
+	font-size: 34rpx;
+	color: #fff;
+	background: #3aadfd;
+	border-radius: 20rpx;
+}
+.activate-libao{
+	width: 100%;
+	height: 230rpx;
+	margin-top: 40rpx;
+	overflow: hidden;
+}
+.activate-l-suo{
+	width: auto;
+	display:flex;
+	flex-wrap: nowrap;
+}
+.active-danyi{
+	width: 80%;
+	height: 230rpx;
+	margin-right: 3%;
+	padding:15rpx;
+	border:1px solid #ccc;
+	box-sizing: border-box;
+	box-shadow: 0 0 10rpx #ccc;
+	background: #eee;
+	display:flex;
+	border-radius: 10rpx;
+}
+.active-active{
+	border:1px solid #309EFD !important;
+	background: #bee7ff !important;
+}
+.active-danyi>image{
+	width: 200rpx;
+	height: 200rpx;
+	margin-right: 15rpx;
+	border-radius: 15rpx;
+}
+.active-danyi>view{
+	width: 350rpx;
+	height: auto;
+}
+.active-danyi>view>view:first-child{
+	width: 100%;
+	height: 100rpx;
+	line-height: 50rpx;
+	overflow: hidden;
+	font-size: 36rpx;
+	color: #333;
+	margin-top: 15rpx;
+}
+.active-danyi>view>view:last-child{
+	font-size: 42rpx;
+	color: #f00;
+}

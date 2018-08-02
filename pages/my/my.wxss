@@ -1,0 +1,153 @@
+/* pages/my/my.wxss */
+.position{
+	width: 100%;
+	height: auto;
+	position: relative;
+}
+.index-top{
+	width: 100%;
+	height: 300rpx;
+}
+.index-top-image{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	left: 0;
+}
+.index-top-image image{
+	width: 100%;
+	height: 100%;
+}
+.index-top-wz{
+	width: 90%;
+	height: auto;
+	position: absolute;
+	z-index: 2;
+	margin-top: 70rpx;
+	margin: 40rpx 5% 0 5%;
+	font-size: 36rpx;
+	color: #fff;
+	display: flex;
+	justify-content: space-between;
+}
+.index-top-wz>view:first-child{
+	width: auto;
+	height: auto;
+	display: flex;
+}
+.index-top-wz>view:first-child>view:first-child{
+	width: 160rpx;
+	height: 160rpx;
+	border-radius: 50%;
+	overflow: hidden;
+	border:3px solid #fff;
+}
+.index-top-wz-name{
+	margin: 0 0 0 30rpx; 
+}
+.index-top-wz-name>view{
+	font-size: 42rpx;
+	height: 60rpx;
+	color: #fff;
+	padding-bottom: 5rpx;
+	display: flex;
+}
+.index-top-wz-name>view>text{
+	font-size: 34rpx;
+	color: #f6f9fe;
+	padding: 7rpx 20rpx;
+	background-color: #158ee4;
+	border-radius: 40rpx;
+	margin-left: 10rpx;
+}
+.my-tj{
+	width: 120rpx;
+	height: 100rpx;
+	font-size: 34rpx;
+	color: #fff;
+	text-align: center;
+	margin-top: 30rpx;
+}
+.my-tj image{
+	width: 65rpx;
+	height: 65rpx;
+}
+.my-tj>view{
+	margin-top: 10rpx;
+}
+.index-conter{
+	width: 96%;
+	height: auto;
+	background-color: #fff;
+	border-radius: 20rpx;
+	box-shadow: 0 0 10rpx #d9d9d9;
+	position: absolute;
+	z-index: 3;
+	top: 250rpx;
+	left: 2%;
+	display: flex;
+}
+.index-c-left{
+	width: 33.3333%;
+	height: auto;
+	text-align: center;
+	border-right: 1px solid #f1f1f1;
+	box-sizing: border-box;
+	margin: 40rpx 0;
+}
+.index-c-left:last-child{
+	border-right: 0;
+}
+.index-c-left>view:first-child{
+	font-size:48rpx;
+	color: #2fa7fd;
+	margin-bottom: 15rpx; 
+}
+.index-c-left>view:last-child{
+	font-size: 34rpx;
+	color: #666;
+}
+/*列表*/
+.my{
+	width: 96%;
+	height: auto;
+	margin: 170rpx 2% 0 2%; 
+	background-color: #fff;
+	padding-bottom: 0;
+	box-shadow: 0 10rpx 10rpx #f1f1f1;
+}
+.my-top{
+	width: 100%;
+	height: 95rpx;
+	line-height:95rpx;
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 1px solid #e5e5e5;
+	position: relative;
+}
+.my-top:last-child{
+	border-bottom: 0;
+}
+.my-top view:first-child image{
+	width: 36rpx;
+	height: 35rpx;
+	line-height: 95rpx;
+	position: absolute;
+	top: 28rpx;
+	left: 20rpx;
+}
+.my-top view:first-child text{
+	padding-left: 80rpx;
+}
+.my-top view{
+	font-size: 36rpx;
+	color: #353535;
+}
+.my-top view:last-child image{
+	width: 20rpx;
+	height: 30rpx;
+	line-height: 95rpx;
+	padding: 0 30rpx;
+}

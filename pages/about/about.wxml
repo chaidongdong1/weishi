@@ -1,0 +1,40 @@
+<!--pages/about/about.wxml-->
+<view class="about">
+	<view>{{datas.mallName}}</view>
+	<view class="about-phone" bindtap="bindtapPhone">
+		<view>
+			<text>电话：</text>
+			<text>{{datas.mallPhone}}</text>
+		</view>
+		<view>
+			<image src="../../assets/address-03.png"></image>
+		</view>
+	</view>
+	<view class="about-phone">
+		<view>
+			<text>邮箱:</text>
+			<text>{{datas.mallEmail}}</text>
+		</view>
+		<view>
+			<image src="../../assets/address-03.png"></image>
+		</view>
+	</view>
+	<view class="about-phone">
+		<view>
+			<text>版本号：</text>
+			<text>{{banbenNo}}</text>
+		</view>
+		<view>
+			<image src="../../assets/address-03.png"></image>
+		</view>
+	</view>
+	<view class="about-phone">
+		<view>
+			<text>地址：</text>
+			<text>{{datas.mallAddress}}</text>
+		</view>
+		<view>
+			<image src="../../assets/address-03.png"></image>
+		</view>
+	</view>
+</view>

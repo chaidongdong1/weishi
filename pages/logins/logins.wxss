@@ -1,0 +1,296 @@
+/* pages/logins/logins.wxss */
+/*授权按钮*/
+
+.container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .4);
+  z-index: 99999;
+}
+.shop-banner{
+  width: 100%;
+  height: 350rpx;
+}
+.slide-image{
+  width: 100%;
+  height: 100%;
+}
+
+.content {
+  width: 80%;
+  height: 340rpx;
+  background-color: #fff;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  transform: translateY(-100rpx);
+  box-sizing: border-box;
+  padding: 20rpx;
+  overflow: hidden;
+  z-index: 999999;
+}
+
+.content .h1 {
+  text-align: center;
+  font-size: 34rpx;
+  padding: 10rpx 0 20rpx;
+  color: #333;
+  line-height: 50rpx;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.h2 {
+  font-size: 30rpx;
+  color: #333;
+  line-height: 70rpx;
+  padding: 10rpx 0 0 30rpx;
+}
+
+.h3 {
+  font-size: 24rpx;
+  color: #999;
+  padding: 0 0 0 30rpx;
+}
+
+.h3 text {
+  display: inline-block;
+  width: 10rpx;
+  height: 10rpx;
+  background-color: #ccc;
+  border-radius: 50%;
+  vertical-align: middle;
+  position: relative;
+  top: -2rpx;
+  margin-right: 10rpx;
+}
+
+.btnaa {
+  display: block;
+  width: 110%;
+  transform: translateX(-5%);
+  border-radius: 0;
+  padding: 0 10rpx;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  font-size: 32rpx;
+  color: #15b516;
+}
+.logins{
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+.logins-img{
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.logins-img>image{
+  width: 100%;
+  height: 100%;
+}
+.logins-wz{
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top:0;
+  left: 0;
+  z-index: 12;
+}
+.logins-wz>view:nth-child(2){
+  font-size: 40rpx;
+  color: #333;
+  text-align: center;
+}
+.logins-wz>view:nth-child(3){
+  width: 90%;
+  height: 400rpx;
+  margin: 0 5%;
+  font-size: 34rpx;
+  color: #666;
+}
+.logins-wz>view:nth-child(4){
+  font-size: 55rpx;
+  text-align: center;
+  color:#0082cc;
+}
+.logins-wz>view:nth-child(5){
+  width: 70%;
+  height: 80rpx;
+  margin: 30rpx 15% 0 15%;
+  background-color: #20a8ff;
+  color: #fff;
+  font-size: 36rpx;
+  text-align: center;
+  line-height: 80rpx;
+  border:0;
+  border-radius: 10rpx;
+}
+.logins-wz>view:last-child{
+  font-size: 30rpx;
+  text-align: center;
+  color: #58c2fd;
+  margin-top: 20rpx;
+}
+
+/*弹窗*/
+
+.mask {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, .6);
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  transition: all ease .6s;
+}
+
+.return-deposit {
+  position: fixed;
+  width: 96%;
+  height: 600rpx;
+  background-color: #fff;
+  z-index: 10000;
+  border-radius: 20rpx;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: 250rpx auto 0;
+  transition: all ease-in-out .4s;
+}
+
+.img-wapper {
+  width: 85%;
+  height: auto;
+  margin: 0 30rpx;
+  font-size: 36rpx;
+  color: #333;
+  line-height: 54rpx;
+}
+
+.f11-zhu {
+  width: 90%;
+  padding: 20rpx 5%;
+  margin-bottom: 20rpx;
+  font-size: 30rpx;
+  color: #e8380d;
+}
+
+.r-title {
+  margin-top: -30rpx;
+}
+
+.line {
+  height: 1px;
+  background-color: #f1f1f1;
+  margin: 20rpx 0;
+}
+
+.input-wapper {
+  width: 92%;
+  height: 100rpx;
+  border-radius: 10rpx;
+  margin: 30rpx auto;
+  border: 2rpx solid #43b1fe;
+  background-color: #d5edff;
+  box-sizing: border-box;
+  font-size: 36rpx;
+}
+
+.input-wapper input {
+  width: 100%;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  height: 100rpx;
+  color: #000;
+}
+
+.btn {
+  width: 92%;
+  height: 80rpx;
+  border-radius: 40rpx;
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 34rpx;
+  color: #fff;
+  box-shadow: 0 0 12px rgba(0, 0, 0, .15);
+  margin: auto;
+  margin-bottom: 30rpx;
+  background: linear-gradient(to left, #2fa7fd, #85d3ff);
+}
+
+.close {
+  width: 100%;
+  height: 200rpx;
+  position: absolute;
+  bottom: -200rpx;
+  text-align: center;
+}
+
+.img-wapper>view:first-child {
+  text-align: center;
+  font-size: 46rpx;
+  color: #000;
+  margin: 40rpx 0;
+}
+
+.mask-left {
+  width: 94%;
+  display: flex;
+  font-size: 36rpx;
+  color: #333;
+}
+
+.mask-left>view:first-child {
+  width: 160rpx;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  font-size: 34rpx;
+  color: #666;
+}
+
+.mask-left-ed {
+  font-size: 40rpx;
+  color: #2fa7fd;
+  flex: 1;
+}
+
+.mask-quanbu {
+  width: 180rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  font-size: 34rpx;
+  color: #fff;
+  background: #3aadfd;
+  border-radius: 20rpx;
+}
+.logins-mask{
+  text-align: center;
+  margin: 30rpx 0 20rpx 0;
+  font-size: 46rpx;
+  color: #31A5F5;
+}
+.logins-masks{
+  width: 92%;
+  margin: 0 4%;
+  font-size: 36rpx;
+  color: #333;
+  line-height: 48rpx;
+}

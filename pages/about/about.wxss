@@ -1,0 +1,44 @@
+/* pages/about/about.wxss */
+.about{
+	width: 100%;
+	height: auto;
+}
+.about>view:first-child{
+	font-size: 40rpx;
+	color: #2fa7fd;
+	margin: 20rpx;
+}
+.about-phone{
+	width:94%;
+	height: 80rpx;
+	padding: 0 3%;
+	line-height: 80rpx;
+	background-color: #fff;
+	border-bottom: 1px solid #f1f1f1;
+	display: flex;
+	justify-content: space-between;
+}
+.about-phone>view:first-child{
+	flex: 1;
+	display: flex;
+	justify-content: space-between;
+	font-size: 36rpx;
+	color: #333;
+}
+.about-phone>view:first-child>text:first-child{
+	width: 150rpx;
+}
+.about-phone>view:first-child>text:first-child{
+	font-size: 34rpx;
+	color: #666;
+}
+.about-phone>view:last-child{
+	width: 35rpx;
+	height: 35rpx;
+	padding-left: 25rpx;
+	padding-top: 8rpx;
+}
+.about-phone>view:last-child image{
+	width: 20rpx;
+	height: 35rpx;
+}

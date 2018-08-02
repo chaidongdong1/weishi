@@ -1,0 +1,62 @@
+<!--pages/addaddress/addaddress.wxml-->
+<view class="active">
+  <view class="active-a1">
+    <view>
+      <image src="../../assets/active-a1.png"></image>
+    </view>
+    <view>
+      <text>姓</text>
+      <text>名：</text>
+    </view>
+    <view>
+      <input type="text" value="{{datas.username}}" placeholder="请输入姓名" bindinput="bindinputName" placeholder-style="font-size:36rpx; color:#666666;" />
+    </view>
+  </view>
+  <view class="active-a1">
+    <view>
+      <image src="../../assets/active-a2.png"></image>
+    </view>
+    <view>
+      <text>手</text>
+      <text>机</text>
+      <text>号：</text>
+    </view>
+    <view>
+      <input type="number" maxlength="11" value="{{datas.userphone}}" placeholder="请输入手机号" bindinput="bindinputPhone" placeholder-style="font-size:36rpx; color:#666666;" />
+    </view>
+  </view>
+  <view class="active-a1" bindtap="bindtapAddress">
+    <view>
+      <image src="../../assets/active-a1.png"></image>
+    </view>
+    <view>
+      <text>选</text>
+      <text>择</text>
+      <text>地</text>
+      <text>址：</text>
+    </view>
+    <view style="flex: 1; height: 90rpx; overflow: hidden; line-height: 90rpx;font-size: 36rpx;color: #666;">{{!datas.address ? address : isnone == 0 ? datas.address : address}}</view>
+  </view>
+  <!-- 详细地址 -->
+  <view class="add-xq">
+    <view class="add-xq-top">
+      <image src="../../assets/active-a5.png"></image>
+      <view>详细地址：</view>
+    </view>
+    <view>
+      <textarea bindinput="bindinputText" maxlength="50" value="{{datas.areaid1}}" placeholder="请输入详细地址(最多不超过50字)" placeholder-style="font-size:36rpx; color:#666; line-height:52rpx;" maxlength="50"></textarea>
+    </view>
+  </view>
+  <!-- 默认地址 -->
+  <view class="add-mr">
+    <checkbox-group bindchange="checkboxChange">
+      <label class="checkbox">
+        <checkbox value="" checked="{{datas.isdefault == ''? checked : datas.isdefault == 1 ? true : false}}" />是否设置为默认地址
+      </label>
+    </checkbox-group>
+  </view>
+  <!-- 按钮 -->
+  <view class="active-button" bindtap="bindtapTianjia">
+    <text>{{!id ? '确认添加' : '确认修改'}}</text>
+  </view>
+</view>

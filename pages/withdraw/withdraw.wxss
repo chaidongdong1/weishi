@@ -1,0 +1,111 @@
+/* pages/withdraw/withdraw.wxss */
+.recha{
+	width: 100%;
+	height: atuo;
+	overflow: hidden;
+}
+.recha-top{
+	width: 94%;
+	height: auto;
+	display: flex;
+	margin: 30rpx 3%;
+	justify-content:space-between;
+}
+.recha-top>.recha-top-active{
+	background-color: #e8380d !important;
+}
+.recha-top>view:first-child{
+	width: 200rpx;
+	height: 70rpx;
+	line-height: 70rpx;
+	background:#2fa7fd;
+	border-radius: 20rpx;
+	font-size: 34rpx;
+	color: #fff;
+	text-align: center;
+	position: relative;
+}
+.recha-top>view:nth-child(2){
+	width: 200rpx;
+	height: 70rpx;
+	line-height: 70rpx;
+	background:#2fa7fd;
+	border-radius: 20rpx;
+	font-size: 34rpx;
+	color: #fff;
+	text-align: center;
+	position: relative;
+}
+.recha-top>view:last-child{
+	width: 200rpx;
+	height: 70rpx;
+	line-height: 70rpx;
+	background:#2fa7fd;
+	border-radius: 20rpx;
+	font-size: 34rpx;
+	color: #fff;
+	text-align: center;
+}
+.recha-center{
+	width: 100%;
+	height: auto;
+}
+.recha-center-left{
+	width: 96%;
+	height: auto;
+	padding: 20rpx 2%;
+	background-color: #fff;
+	margin-bottom: 25rpx;
+	border-bottom: 1px solid #f1f1f1;
+	border-top: 1px solid #f1f1f1;
+}
+.recha-center-left>view{
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 10rpx;
+}
+.recha-center-left>view:first-child{
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 10rpx;
+}
+.recha-center-left>view>view{
+	font-size: 36rpx;
+	color: #333;
+	line-height: 48rpx;
+}
+.recha-center-left  button{
+	width: 30%;
+	height: 70rpx;
+	line-height: 70rpx;
+	text-align: center;
+	background: linear-gradient(to right, #85d3ff, #2fa7fd);
+	font-size: 34rpx;
+	color: #fff;
+	border-radius: 20rpx;
+	border: 0;
+	margin: 25rpx 2% 10rpx 68%; 
+}
+.with-qb{
+	width: 100%;
+	height: auto;
+	margin: 30rpx;
+	text-align: center;
+	font-size: 34rpx;
+	color: #666;
+}
+.order-top-sl-active{
+  color: #e8380d !important;
+  background: #f1f1f1 !important;
+  width: 60rpx;
+  height: 60rpx;
+  font-size: 30rpx;
+  background: #fff;
+  box-shadow: 0 0 10rpx #ccc;
+  border-radius: 50%;
+  color: #333;
+  text-align: center;
+  line-height: 60rpx;
+  position: absolute;
+  right: -25rpx;
+  top: -25rpx;
+}

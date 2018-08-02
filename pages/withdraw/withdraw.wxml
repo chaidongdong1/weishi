@@ -1,0 +1,46 @@
+<!--pages/withdraw/withdraw.wxml-->
+<!--pages/recharge/recharge.wxml-->
+<view class="recha">
+  <!-- 选项卡 -->
+  <view class="recha-top">
+    <view class="{{indexs == 1 ? 'recha-top-active' : ''}}" bindtap="bindtapWith1">审核中
+      <view class="order-top-sl-active">{{datasNumber}}</view>
+    </view>
+    <view class="{{indexs == 2 ? 'recha-top-active' : ''}}" bindtap="bindtapWith2">已通过</view>
+    <view class="{{indexs == 3 ? 'recha-top-active' : ''}}" bindtap="bindtapWith3">已退回</view>
+  </view>
+  <!-- 内容 -->
+  <view class="recha-center">
+    <!-- 第一条 -->
+    <view class="recha-center-left" wx:for="{{datas}}" wx:key="{{index}}">
+      <view>
+        <view>充值金额：</view>
+        <view>{{item.money}}</view>
+      </view>
+      <view>
+        <view>充值时间：</view>
+        <view>{{item.createtime}}</view>
+      </view>
+      <view>
+        <view>充值状态：</view>
+        <view>{{item.cashsatus == 1 ? '审核中' : item.cashsatus == 2 ? '已通过' : '已退回'}}</view>
+      </view>
+      <view>
+        <view>充值类型：</view>
+        <view>{{item.targettype == 0 ? '商城币充值' : item.targettype == 1 ? '电费充值' : item.targettype == 2 ? '话费充值' : '燃气费充值'}}</view>
+      </view>
+      <view wx:if="{{item.cashsatus == 2}}">
+        <view>通过时间：</view>
+        <view>{{item.handletime}}</view>
+      </view>
+      <view wx:if="{{item.cashsatus == -1}}">
+        <view>退回时间：</view>
+        <view>{{item.canceltime}}</view>
+      </view>
+    </view>
+  </view>
+  <!-- 已加载全部 -->
+  <view wx:if="{{datas != ''}}" class="with-qb">已加载全部</view>
+  <!-- 暂无数据 -->
+  <view wx:if="{{!datas || datas.length == 0}}" class="with-qb">当前暂无数据</view>
+</view>

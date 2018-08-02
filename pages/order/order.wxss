@@ -1,0 +1,167 @@
+/* pages/order/order.wxss */
+
+.order {
+  width: 100%;
+  height: auto;
+}
+
+.order-top {
+  width: 96%;
+  display: flex;
+  justify-content: space-between;
+  margin: 30rpx 2%;
+}
+
+.order-top>view {
+  width: 29%;
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: center;
+  background-color: #2fa7fd;
+  border-radius: 30rpx;
+  font-size: 34rpx;
+  color: #fff;
+  position: relative;
+}
+.order-top>view>view{
+  width: 60rpx;
+  height: 60rpx;
+  font-size: 30rpx;
+  background: #fff;
+  box-shadow: 0 0 10rpx #ccc;
+  border-radius: 50%;
+  color: #333;
+  text-align: center;
+  line-height: 60rpx;
+  position: absolute;
+  right: -25rpx;
+  top: -25rpx;
+}
+.order-top-sl-active{
+  color: #e8380d !important;
+  background: #f1f1f1 !important;
+}
+
+.order-top-active {
+  background-color: #e8380d !important;
+}
+
+.order-cen {
+  width: 100%;
+  height: auto;
+}
+
+.order-cen-left {
+  width: 96%;
+  height: auto;
+  padding: 20rpx 2%;
+  background-color: #fff;
+  margin: 20rpx 0;
+}
+
+.order-cen-left>view:first-child {
+  font-size: 36rpx;
+  color: #333;
+}
+
+.order-cen-left-nth2 {
+  font-size: 36rpx;
+  color: #333;
+}
+.order-cen-left-nth3 {
+  font-size: 36rpx;
+  color: #333;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 15rpx;
+  padding-bottom: 5rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.order-cen-shop {
+  width: 100%;
+  height: auto;
+}
+
+.shop-one {
+  width: 100%;
+  display: flex;
+  font-size: 36rpx;
+  color: #333;
+}
+
+.shop-one>view:first-child {
+  width: 210rpx;
+  height: 210rpx;
+  padding: 15rpx;
+}
+
+.shop-one>view:first-child image {
+  width: 210rpx;
+  height: 210rpx;
+}
+
+.shop-one-title {
+  flex: 1;
+  height: 60rpx;
+  overflow: hidden;
+}
+
+.shop-one-color text {
+  font-size: 40rpx;
+  color: #e8380d;
+}
+
+.order-cen-left>view:last-child {
+  width: 100%;
+  height: auto;
+  border-top: 1px solid #eee;
+  padding-top: 5rpx;
+  margin-top: 15rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.order-cen-left>view:last-child>view:first-child {
+  font-size: 36rpx;
+  color: #333;
+  margin-top: 10rpx;
+}
+
+.order-cen-left>view:last-child>view>text {
+  font-size: 40rpx;
+  color: #e8380d;
+}
+
+.order-xq {
+  width: 200rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: center;
+  font-size: 34rpx;
+  color: #fff;
+  background-color: #6fbbef;
+  border-radius: 20rpx;
+  margin-top: 10rpx;
+}
+
+.order-qr {
+  width: 200rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: center;
+  font-size: 34rpx;
+  color: #fff;
+  background-color: #e8380d;
+  border-radius: 20rpx;
+  margin-top: 10rpx;
+}
+
+.order-qb {
+  width: 100%;
+  height: auto;
+  text-align: center;
+  margin: 30rpx 0;
+  font-size: 34rpx;
+  color: #666;
+}

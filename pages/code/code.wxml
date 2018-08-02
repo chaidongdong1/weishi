@@ -1,0 +1,66 @@
+<!--pages/code/code.wxml-->
+<view class="code">
+  <view class="code-tui">推广ID:{{personal.userid*1+12538}}</view>
+  <view class="code-tp">
+    <image src="{{baseUrl}}{{personal.rqcode}}"></image>
+    <view><open-data type="userAvatarUrl"></open-data></view>
+  </view>
+  <view class="code-wz">分享二维码赚取收益</view>
+  <view class="code-tx">
+    <view>当前余额：￥
+      <text>{{!personal.distributmoney ? 0 : personal.distributmoney }}</text>
+    </view>
+    <view bindtap="showPopup">提现</view>
+  </view>
+  <view class="code-bottom">本活动最终解释权归{{seeting.mallName}}所有</view>
+</view>
+<!-- 弹窗 -->
+<view class="mask" style="opacity: {{mask.opacity}}; display: {{mask.display}};">
+  <view class="return-deposit" style="transform: {{returnDeposit.translateY}}; opacity: {{returnDeposit.opacity}};">
+    <view class="img-wapper">
+      <view>提现</view>
+      <view class="mask-left">
+        <view>
+          <view>姓</view>
+          <view>名：</view>
+        </view>
+        <view>{{personal.realname}}</view>
+      </view>
+      <view class="mask-left">
+        <view>
+          <view>开</view>
+          <view>户</view>
+          <view>行：</view>
+        </view>
+        <view>{{personal.userbankress}}</view>
+      </view>
+      <view class="mask-left">
+        <view>
+          <view>银</view>
+          <view>行</view>
+          <view>卡</view>
+          <view>号：</view>
+        </view>
+        <view>{{personal.userbankcard}}</view>
+      </view>
+      <view class="mask-left">
+        <view>
+          <view>当</view>
+          <view>前</view>
+          <view>额</view>
+          <view>度：</view>
+        </view>
+        <view class="mask-left-ed">￥{{!personal.distributmoney || personal.distributmoney == null ? 0 : personal.distributmoney}}</view>
+      </view>
+      <view class="f11-zhu">注：您正在进行提现操作，请确认您的提现信息，提现扣除20% ，转为商城币。</view>
+    </view>
+    <view class="line"></view>
+    <view class="input-wapper b-color">
+      <input value="{{money}}" placeholder-style="color:#666;font-size:34rpx;" type="number" bindinput="bindinputMoney" placeholder="输入提现金额（整百）" />
+    </view>
+    <view class="btn"  bindtap="bindtapTixian">确认提现</view>
+    <view class="close" bindtap="handleClosePopup">
+      <image src="../../assets/close.png" style="width: 120rpx;height: 120rpx;margin-top: 30rpx;"></image>
+    </view>
+  </view>
+</view>

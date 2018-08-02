@@ -1,0 +1,38 @@
+<!--pages/seeks/seeks.wxml-->
+<!-- 搜索框 -->
+<view class="seeks">
+  <view class="shop-seek">
+    <view class="shop-nav">
+      <image src="../../assets/sousuo.png"></image>
+      <input type="text" value="{{input}}" bindinput="bindSousuo" placeholder="请输入搜索内容" name="" focus="{{focus}}" confirm-type="search" bindblur="bindblurSousuo" />
+    </view>
+    <view><button bindtap="bintapButton">搜索</button></view>
+  </view>
+  <!-- 空页面 -->
+  <view wx:if="{{datas.length == 0 && input != '' && button == true}}" class="seek-kong">
+    <image src="../../assets/seek-kong.png"></image>
+    <view>找不到结果</view>
+    <view>没有搜索到关于"
+      <text>{{input}}</text>"的商品</view>
+    <view>建议换个关键词试试</view>
+  </view>
+  <!-- 内容 -->
+  <view wx:if="{{datas.length != 0 && input != '' && button == true}}" class="shop">
+    <view class="shops">
+      <!-- 第一个 -->
+      <navigator class="shops-left" url="../shopdetails/shopdetails?goodsid={{item.goodsid}}" wx:for="{{datas}}" wx:key="{{index}}">
+        <view class="shop-left-img">
+          <image src="{{baseUrl}}{{item.goodsthums}}"></image>
+        </view>
+        <view class="shop-left-wz">{{item.goodsname}}</view>
+        <view class="shop-left-jg">
+          <view>价格
+            <text>￥{{item.shopprice}}</text>
+          </view>
+        </view>
+      </navigator>
+    </view>
+    <!-- 加载完毕时 -->
+    <view class="shop-none" style="margin: 15rpx 0;">已加载全部</view>
+  </view>
+</view>

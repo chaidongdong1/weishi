@@ -1,0 +1,49 @@
+<!--pages/order/order.wxml-->
+<view class="order">
+  <!-- 按钮 -->
+  <view class="order-top">
+    <view bindtap="bindtaporder1" class=" {{curIndex == 1 ? 'order-top-active' : ''}}">
+      待发货
+      <view class=" {{curIndex == 1 ? 'order-top-sl-active' : ''}}">{{pendingTotal}}</view>
+    </view>
+    <view bindtap="bindtaporder2" class=" {{curIndex == 2 ? 'order-top-active' : ''}}">已发货</view>
+    <view bindtap="bindtaporder3" class=" {{curIndex == 3 ? 'order-top-active' : ''}}">已完成</view>
+  </view>
+  <!-- 订单列表 -->
+  <view class="order-cen">
+    <!-- 订单1   wx:key是健值   wx:for-item是数组的每一项  wx:for-index是数组的下标 -->
+    <view class="order-cen-left" wx:for="{{datas}}" wx:key="{{i}}" wx:for-item="ikey" wx:for-index="i">
+      <view>订单编号：{{ikey.orderno}}</view>
+      <view class="order-cen-left-nth2" wx:if="{{ikey.orderstatus != 1}}">物流单号：{{ikey.deliverno}}</view>
+      <view class="order-cen-left-nth3">下单时间：{{ikey.createtime}}</view>
+      <view class="order-cen-shop">
+        <!-- 商品1 -->
+        <view class="shop-one" bindtap="bindtapShop"  data-goodsid="{{item.goodsid}}" data-status="{{item.status}}" wx:for="{{ikey.goods}}" wx:key="{{indexj}}">
+          <view>
+            <image src="{{baseUrl}}{{item.goodsimg}}"></image>
+          </view>
+          <view>
+            <view class="shop-one-title">{{item.goodsname}}</view>
+            <view>规格：“{{item.goodsattrid}}”</view>
+            <view>数量：{{item.goodsnums}}件</view>
+            <view class="shop-one-color">单价:￥
+              <text>{{item.goodsprice}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <!-- 总价 -->
+      <view>
+        <view>总价:￥
+          <text>{{ikey.totalmoney}}</text>
+        </view>
+        <navigator class="order-xq" url="../orderdetails/orderdetails?orderid={{ikey.orderid}}">查看详情</navigator>
+        <view class="order-qr" wx:if="{{ikey.orderstatus == 2}}" bindtap="bindtapShow" data-orderId="{{ikey.orderid}}">确认收货</view>
+      </view>
+    </view>
+  </view>
+  <!-- 加载全部 -->
+  <view wx:if="{{datas.length != 0}}" class="order-qb">已加载全部</view>
+</view>
+<!-- 没有数据时 -->
+<view class="order-qb" wx:if="{{!datas || datas.length == 0}}">当前暂无数据！</view>

@@ -1,0 +1,76 @@
+/* pages/feedback/feedback.wxss */
+.fee{
+	width: 100%;
+	height: auto;
+	margin-top: 20rpx;
+	overflow: hidden;
+}
+.fee-title{
+	width: 100%;
+	height: 70rpx;
+	font-size: 38rpx;
+	color: #000;
+	line-height: 70rpx;
+	position: relative;
+}
+.fee-title text{
+	padding-left: 20rpx;
+}
+.fee-title image{
+	width: 50rpx;
+	height: 50rpx;
+	position: absolute;
+	top: 15rpx;
+	left: 20rpx;
+}
+.fee-dx{
+	width: 100%;
+	height: auto;
+	margin: 20rpx 0;
+}
+.fee-dx1{
+	width: 90%;
+	height: auto;
+	padding: 0 40rpx;
+	
+}
+.fee-dx1-labe{
+	width: 100%;
+	height: 60rpx;
+	line-height: 60rpx;
+	font-size: 36rpx;
+	color: #333;
+	display: block;
+	padding-bottom: 15rpx;
+}
+.fee-dx1-labe radio{
+	border-radius: 50%;
+	color: #ccc;
+	padding-right: 20rpx;
+}
+.fee-text{
+	width: 96%;
+	height: 300rpx;
+	margin: 20rpx 2%;
+	background: #fff;
+}
+.fee-text textarea{
+	width: 96%;
+	height: 250rpx;
+	font-size: 36rpx;
+	color: #333;
+	line-height: 52rpx;
+	padding: 20rpx 2%;
+}
+.fee-button{
+	width: 90%;
+	height: 80rpx;
+	background: #3aadfd;
+	color: #fff;
+	border-radius: 10rpx;
+	line-height: 80rpx;
+	text-align: center;
+	margin: 50rpx 5% 0 5%; 
+	font-size: 40rpx;
+	border: 0;
+}

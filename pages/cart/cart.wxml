@@ -1,0 +1,77 @@
+<!--pages/cart/cart.wxml-->
+<!-- 温馨提示 -->
+<view class="cart-ts" bindtap="handleCloseMsg" wx:if="{{showMsg && datas.length != 0}}">
+  <view>温馨提示：
+    <text>长按列表即可进行删除或购买操作</text>
+  </view>
+  <view>
+    <image src="../../assets/guanbi.png"></image>
+  </view>
+</view>
+<view class="cart" wx:if="{{!datas || datas.length != 0}}" bindtap="test">
+  <!-- 商品1 -->
+  <view class="carts" wx:for="{{datas}}" wx:key="{{index}}" catchlongpress="bindtapPopup" data-index="{{index}}">
+    <view class="cart-left">
+      <view bindtap="bindtapShopxq" data-shopId="{{item.shopId}}">
+        <image src="{{baseUrl}}{{item.shopimage}}"></image>
+      </view>
+      <view>
+        <view bindtap="bindtapShopxq" data-shopId="{{item.shopId}}">{{item.shopName}}</view>
+        <view>规格："{{item.shopColor}} {{item.shopSize}}"</view>
+        <view>价格：
+          <text>￥{{item.shopMoney}}</text>
+        </view>
+        <view class="cart-left-sl">
+          <view>数量：</view>
+          <view bindtap="bindtapjian" data-index="{{index}}">
+            <image src="../../assets/cart-jian.png"></image>
+          </view>
+          <view>{{item.shopNumber}}</view>
+          <view bindtap="bindtapjia" data-index="{{index}}">
+            <image src="../../assets/cart-jia.png"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+      <!-- 选择按钮 -->
+      <!-- {{item.temp == true ? 'car-xz' : 'car-xz1'}} -->
+      <view class="{{item.temp == false ? 'car-xz' : 'car-xz1'}}" bindtap="bindtapAnniu" data-index="{{index}}">
+        <image wx:if="{{item.temp == true}}" src="../../assets/cart-xz.png"></image>
+      </view>
+    <!-- 长按弹出 -->
+    <view class="carts-tc" wx:if="{{popup == index}}" bindtap="bindtapClose">
+      <view bindtap="bindtapJiesuanY" data-index="{{index}}">购买</view>
+      <view style="background-color: #e8380d;" bindtap="bindtapDelete" data-index="{{index}}">删除</view>
+    </view>
+  </view>
+  <!-- 已加载全部 -->
+  <view  class="cart-kong">已加载全部</view>
+</view>
+<!-- 底部 -->
+<view wx:if="{{!datas || datas.length != 0}}" class="cart-bottom" bindtap="test">
+  <view bindtap="bindtapSuoyou">
+    <!-- wx:if="{{shuoyou == false ? 'cart-bb1' : 'cart-bb2'}}" -->
+    <view class="{{shuoyou == false ? 'cart-bb1' : 'cart-bb2'}}">
+      <image wx:if="{{shuoyou}}" src="../../assets/cart-xz.png"></image>
+    </view>
+    <view>{{shuoyou == false ? '全选' : '取消'}}</view>
+  </view>
+  <view>共选中
+    <text>{{shopnumber}}</text>件 总计:￥
+    <text>{{shopmoneys}}.00</text>
+  </view>
+  <view bindtap="bindtapJiesuanD">去结算</view>
+</view>
+<!-- 没有数据时 -->
+<view wx:if="{{datas.length == 0}}" class="index-kong">
+  <view class="index-kong-image">
+    <image src="../../assets/cart-kong.png"></image>
+  </view>
+  <view>空空如也</view>
+  <view>你还没有在购物车添加商品~</view>
+  <view>快去商城逛逛吧!</view>
+  <view class="index-kong-button" bindtap="bindtapShop">
+    <view>进入商城</view>
+    <image src="../../assets/index-gd.png"></image>
+  </view>
+</view>

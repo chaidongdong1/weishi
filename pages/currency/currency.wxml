@@ -1,0 +1,115 @@
+<!--pages/currency/currency.wxml-->
+<!-- 收益分类 -->
+<!-- <view class="index-cl">
+  <view class="{{daoIndex == -1 ? 'index-cl-active' : ''}}" bindtap="bindtapIndex">商城币</view>
+  <view class="{{daoIndex == 0 ? 'index-cl-active' : ''}}" bindtap="bindtapIndex1">月度奖金</view>
+  <view class="{{daoIndex == 1 ? 'index-cl-active' : ''}}" bindtap="bindtapIndex2">消费推广奖</view>
+  <view class="{{daoIndex == 2 ? 'index-cl-active' : ''}}" bindtap="bindtapIndex3">宝贝掌柜</view>
+</view> -->
+<!-- 记录 -->
+<view class="curr" wx:if="{{datas.length != 0}}">
+  <!-- 第一条 -->
+  <view class="curr-left" wx:for="{{datas}}" wx:key="{{index}}">
+    <view>
+      <view>金额</view>
+      <view class="curr-shou" wx:if="{{item.scoretype == 1}}">+{{item.score}}</view>
+      <view wx:if="{{item.scoretype == 2}}" class="curr-xiao">-{{item.score}}</view>
+    </view>
+    <view>
+      <view>时间：</view>
+      <view class="curr-left-sj">{{item.createtime}}</view>
+    </view>
+    <view>
+      <view>类型：</view>
+      <view class="curr-left-sj">{{item.datasrc}}</view>
+    </view>
+    <view>
+      <view>描述：</view>
+      <view class="curr-left-sj">{{item.dataremarks}}</view>
+    </view>
+  </view>
+  <!-- 加载完毕 -->
+  <view wx:if="{{totalPage == currPage}}" class="curr-qb">已加载全部</view>
+</view>
+<!-- 充值 -->
+<view class="curr-cz">
+  <view>剩余：
+    <text>{{usermoney}}</text>
+  </view>
+  <view bindtap="showPopup">充值</view>
+</view>
+<!-- 弹窗 -->
+<view class="mask" style="opacity: {{mask.opacity}}; display: {{mask.display}};">
+  <view class="return-deposit" style="transform: {{returnDeposit.translateY}}; opacity: {{returnDeposit.opacity}};">
+    <view class="img-wapper">
+      <view>充值</view>
+      <view class="mask-left">
+        <view>
+          <view>商</view>
+          <view>家</view>
+          <view>姓</view>
+          <view>名：</view>
+        </view>
+        <view>{{shops.shopName}}</view>
+      </view>
+      <view class="mask-left">
+        <view>
+          <view>商</view>
+          <view>家</view>
+          <view>银</view>
+          <view>行</view>
+          <view>卡</view>
+          <view>号：</view>
+        </view>
+        <view>{{shops.shopAccNo}}</view>
+      </view>
+      <view class="mask-left">
+        <view>
+          <view>商</view>
+          <view>家</view>
+          <view>电</view>
+          <view>话：</view>
+        </view>
+        <view>{{shops.shopAccTel}}</view>
+      </view>
+      <view class="mask-left">
+        <view>
+          <view>商</view>
+          <view>家</view>
+          <view>支</view>
+          <view>付</view>
+          <view>宝</view>
+          <view>号：</view>
+        </view>
+        <view>{{shops.shopAccPayNo}}</view>
+      </view>
+      <view class="mask-left">
+        <view>
+          <view>商</view>
+          <view>家</view>
+          <view>微</view>
+          <view>信</view>
+          <view>号：</view>
+        </view>
+        <view>{{shops.shopAccWxNo}}</view>
+      </view>
+      <view class="f11-zhu">注：您正在进行充值操作，请确认您的充值信息。充值需谨记商家信息，以免操作错误。</view>
+    </view>
+    <view class="line"></view>
+    <view class="input-wapper b-color">
+      <input value="{{money}}" placeholder-style="color:#666;font-size:34rpx;" type="number" bindinput="handleRecordMoeny" placeholder="输入充值金额" />
+    </view>
+    <view class="btn" bindtap="bindtapChongzhi">确认充值</view>
+    <view class="close" bindtap="handleClosePopup">
+      <image src="../../assets/close.png" style="width: 120rpx;height: 120rpx;margin-top: 30rpx;"></image>
+    </view>
+  </view>
+</view>
+<!-- 没有数据时 -->
+<view class="index-kong" wx:if="{{datas.length == 0 || !datas}}">
+  <view class="index-kong-image">
+    <image src="../../assets/coin-kong.png"></image>
+  </view>
+  <view>暂无记录</view>
+  <view>暂无商城币交易记录！~</view>
+</view>

@@ -1,0 +1,61 @@
+{
+  "pages": [
+    "pages/logins/logins",
+    "pages/activate/activate",
+    "pages/shop/shop",
+    "pages/password/password",
+    "pages/addressaa/addressaa",
+    "pages/seeks/seeks",
+    "pages/currency/currency",
+    "pages/address/address",
+    "pages/addaddress/addaddress",
+    "pages/recharge/recharge",
+    "pages/withdraw/withdraw",
+    "pages/feedback/feedback",
+    "pages/code/code",
+    "pages/member/member",
+    "pages/about/about",
+    "pages/order/order",
+    "pages/close/close",
+    "pages/orderdetails/orderdetails",
+    "pages/my/my",
+    "pages/cart/cart",
+    "pages/shopdetails/shopdetails",
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "tabBar":
+  {
+    "list": [
+    {
+      "pagePath": "pages/index/index",
+      "text": "收益",
+      "iconPath": "assets/nav-a1.png",
+      "selectedIconPath": "assets/nav-a2.png"
+    },
+    {
+      "pagePath": "pages/shop/shop",
+      "text": "商城",
+      "iconPath": "assets/nav-b1.png",
+      "selectedIconPath": "assets/nav-b2.png"
+    },
+    {
+      "pagePath": "pages/my/my",
+      "text": "我的",
+      "iconPath": "assets/nav-c1.png",
+      "selectedIconPath": "assets/nav-c2.png"
+    }],
+    "color":"#9ca6ae",
+    "selectedColor":"#2fa7fd",
+    "borderStyle":"#c5c7cb",
+    "backgroundColor":"#fff",
+    "position":"bottom"
+  },
+  "window":
+  {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#31A5F5",
+    "backgroundColor": "#fff",
+    "navigationBarTextStyle": "white"
+  }
+}

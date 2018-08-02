@@ -1,0 +1,60 @@
+<!--pages/recharge/recharge.wxml-->
+<view class="recha">
+  <!-- 选项卡 -->
+  <view class="recha-top">
+    <view bindtap="bindtapRecha1" class="{{curIndex == 1 ? 'recha-top-active' : ''}}">
+      审核中
+      <view class="order-top-sl-active">{{datasNumber}}</view>
+    </view>
+    <view bindtap="bindtapRecha2" class="{{curIndex == 2 ? 'recha-top-active' : ''}}">已通过</view>
+    <view bindtap="bindtapRecha3" class="{{curIndex == 3 ? 'recha-top-active' : ''}}">已取消</view>
+  </view>
+  <!-- 内容 -->
+  <view class="recha-center" wx:if="{{datas.length != 0}}">
+    <!-- 第一条 -->
+    <view class="recha-center-left" wx:for="{{datas}}" wx:key="{{index}}">
+      <view>
+        <view>提现金额：</view>
+        <view>{{item.money}}</view>
+      </view>
+      <view>
+        <view>姓名：</view>
+        <view>{{item.accuser}}</view>
+      </view>
+      <view>
+        <view>卡号：</view>
+        <view>{{item.accno}}</view>
+      </view>
+      <view>
+        <view>开户行：</view>
+        <view>{{item.accaddress}}</view>
+      </view>
+      <view>
+        <view>商城币</view>
+        <view>+{{item.poundage}}</view>
+      </view>
+      <view>
+        <view>提现时间：</view>
+        <view>{{item.createtime}}</view>
+      </view>
+      <view>
+        <view>提现状态：</view>
+        <view>{{item.cashsatus == 1 ? '审核中' : item.cashsatus == 2 ? '已通过' : '已取消'}}</view>
+      </view>
+      <view wx:if="{{item.cashsatus == 2}}">
+        <view>通过时间：</view>
+        <view>{{item.handletime}}</view>
+      </view>
+      <view wx:if="{{item.cashsatus == -1}}">
+        <view>取消时间：</view>
+        <view>{{item.canceltime}}</view>
+      </view>
+      <!-- 按钮 -->
+      <button bindtap="bindtapButton" data-cashId="{{item.cashid}}" wx:if="{{item.cashsatus == 1}}">取消提现</button>
+    </view>
+    <!-- 已加载全部 -->
+    <view class="with-qb">已加载全部</view>
+  </view>
+  <!-- 暂无数据 -->
+  <view wx:if="{{datas.length == 0 || !datas}}" class="with-qb">当前暂无数据</view>
+</view>

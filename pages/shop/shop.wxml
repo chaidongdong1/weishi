@@ -1,0 +1,105 @@
+<!--pages/shop/shop.wxml-->
+<!-- 轮播 -->
+<view class="shop-banner">
+  <swiper style="height: 100%;" indicator-dots="true" indicator-active-color="#3AADFD" autoplay="true" interval="5000" duration="1000" circular="true">
+    <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" />
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<!-- 搜索框 -->
+<view class="shop-seek">
+  <navigator class="shop-nav" url="../seeks/seeks">
+    <image src="../../assets/sousuo.png"></image>
+    <text>搜索商品名称</text>
+  </navigator>
+</view>
+<!-- 内容 -->
+<view class="shop conter">
+  <!-- 商品分类 -->
+  <scroll-view scroll-x style="height: 120rpx;" scroll-left="{{scrollleft}}">
+    <!--  -->
+    <view class="list-lb">
+      <view class="{{catIndex == index ? 'list-lb-one list-lb-active' : 'list-lb-one'}}" wx:for="{{datas}}" wx:key="{{index}}" bindtap="bindtapDaohang" data-catIndex="{{index}}">{{item.catname}}</view>
+    </view>
+  </scroll-view>
+  <!-- 便民服务 -->
+  <view class="bian" wx:if="{{datas.length == catIndex*1+1}}">
+    <view bindtap="showPopup" data-payIndex="1">
+      <image src="../../assets/bm-df.jpg"></image>
+    </view>
+    <view bindtap="showPopup" data-payIndex="2">
+      <image src="../../assets/bm-hf.jpg"></image>
+    </view>
+    <view bindtap="showPopup" data-payIndex="3">
+      <image src="../../assets/bm-rqf.jpg"></image>
+    </view>
+    <view bindtap="bindtapHuli">
+      <image src="../../assets/bm-jiazheng.jpg"></image>
+    </view>
+    <view bindtap="bindtapHuli">
+      <image src="../../assets/bm-huli.jpg"></image>
+    </view>
+    <view bindtap="bindtapHuli">
+      <image src="../../assets/bm-gd.jpg"></image>
+    </view>
+  </view>
+  <!-- 弹窗 -->
+  <view class="mask" style="opacity: {{mask.opacity}}; display: {{mask.display}};">
+    <view class="return-deposit" style="transform: {{returnDeposit.translateY}}; opacity: {{returnDeposit.opacity}};">
+      <view class="img-wapper">
+        <view>{{payIndex == 1 ? '电费充值' : payIndex == 2 ? '话费充值' : '燃气费充值'}}</view>
+        <view class="mask-left">
+          <view>
+            <view>当</view>
+            <view>前</view>
+            <view>额</view>
+            <view>度：</view>
+          </view>
+          <view class="mask-left-ed">￥{{!usersMoney || usersMoney == null ? 0 : usersMoney}}</view>
+        </view>
+      </view>
+      <view class="input-wapper b-color">
+        <input value="" placeholder-style="color:#666;font-size:34rpx;" type="number" bindinput="bindinputHuhao" placeholder="{{place[payIndex]}}" />
+      </view>
+      <view class="line"></view>
+      <view class="input-wapper b-color">
+        <input value="" placeholder-style="color:#666;font-size:34rpx;" type="number" bindinput="bindinputMoney" placeholder="输入充值金额" />
+      </view>
+      <view class="f11-zhu">注：您正在进行充值操作，请确认您的充值信息。</view>
+      <view class="btn" bindtap="bindtapTixian">确认充值</view>
+      <view class="close" bindtap="handleClosePopup">
+        <image src="../../assets/close.png" style="width: 120rpx;height: 120rpx;margin-top: 30rpx;"></image>
+      </view>
+    </view>
+  </view>
+  <!-- 商品列表 -->
+  <view class="shops" wx:if="{{goodlists.length != 0 && datas.length != catIndex*1+1}}">
+    <!-- 第一个 -->
+    <navigator class="shops-left" url="../shopdetails/shopdetails?goodsid={{item.goodsid}}" wx:for="{{goodlists}}" wx:key="{{index}}">
+      <view class="shop-left-img">
+        <image src="{{baseUrl}}{{item.goodsthums}}"></image>
+      </view>
+      <view class="shop-left-wz">{{item.goodsname}}</view>
+      <view class="shop-left-jg">
+        <view>价格
+          <text>￥{{item.shopprice}}</text>
+        </view>
+      </view>
+      <view>月销量：{{item.salecount}}件</view>
+    </navigator>
+    <!-- 加载完毕时 -->
+    <view class="shop-none" style="width:100%;margin: 15rpx 0;">已加载全部</view>
+  </view>
+  <!-- 没有数据时 -->
+  <view wx:if="{{(goodlists.length == 0 || !goodlists) && (datas.length != catIndex*1+1)}}" class="shop-none">暂无商品</view>
+  <!-- 购物车图标 -->
+  <navigator class="shop-cart" url="../cart/cart">
+    <view>
+      <image src="../../assets/cart.png"></image>
+      <view class="shop-cart-number">{{!cartNumber ? 0 : cartNumber}}</view>
+    </view>
+  </navigator>
+</view>

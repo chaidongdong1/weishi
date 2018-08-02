@@ -1,0 +1,168 @@
+<!--pages/activate/activate.wxml-->
+<!-- 输入密码 -->
+<view class="mask" wx:if="{{userInfo.userstatus != -1 && mask == true}}">
+  <view class="return-deposit">
+    <view class="input-wapper b-color">
+      <input placeholder-style="color:#666;font-size:34rpx;" type="password" maxlength="16" bindinput="bindinputPasswords" placeholder="请输入用户密码" />
+    </view>
+    <view class="btn" bindtap="bindinputQueren">确认密码</view>
+  </view>
+</view>
+<view class="active">
+  <view class="active-a1">
+    <view>
+      <image src="../../assets/active-a1.png"></image>
+    </view>
+    <view>
+      <text>姓</text>
+      <text>名：</text>
+    </view>
+    <view>
+      <input bindinput="bindinputName" type="text" value="{{userInfo.realname}}" placeholder="请输入姓名" placeholder-style="font-size:34rpx; color:#666666;" />
+    </view>
+  </view>
+  <view class="active-a1">
+    <view>
+      <image src="../../assets/active-a2.png"></image>
+    </view>
+    <view>
+      <text>手</text>
+      <text>机</text>
+      <text>号：</text>
+    </view>
+    <view>
+      <input bindinput="bindinputPhone" maxlength="11" type="number" value="{{userInfo.userphone}}" placeholder="请输入手机号" placeholder-style="font-size:34rpx; color:#666666;" />
+    </view>
+  </view>
+  <view class="active-a1">
+    <view>
+      <image src="../../assets/active-a1.png"></image>
+    </view>
+    <view>
+      <text>身</text>
+      <text>份</text>
+      <text>证</text>
+      <text>号：</text>
+    </view>
+    <view>
+      <input bindinput="bindinputShenno" maxlength="18" type="idcard" value="{{userInfo.useridcard}}" placeholder="请输入身份证号" placeholder-style="font-size:34rpx; color:#666666;" />
+    </view>
+  </view>
+  <!-- 银行卡 -->
+  <view class="active-a1" style="margin-top: 50rpx;">
+    <view>
+      <image src="../../assets/active-a3.png"></image>
+    </view>
+    <view>
+      <text>银</text>
+      <text>行</text>
+      <text>卡</text>
+      <text>号：</text>
+    </view>
+    <view>
+      <input bindinput="bindinputYinhang" maxlength="19" type="number" value="{{userInfo.userbankcard}}" placeholder="请输入银行卡号" placeholder-style="font-size:34rpx; color:#666666;" />
+    </view>
+  </view>
+  <view class="active-a1">
+    <view>
+      <image src="../../assets/active-a3.png"></image>
+    </view>
+    <view>
+      <text>开</text>
+      <text>户</text>
+      <text>行：</text>
+    </view>
+    <view>
+      <input bindinput="bindinputKaihu" type="text" value="{{userInfo.userbankress}}" placeholder="请输入开户行" placeholder-style="font-size:34rpx; color:#666666;" />
+    </view>
+  </view>
+  <!-- 用户密码 -->
+  <view class="active-a1" wx:if="{{userInfo.userstatus == -1}}">
+    <view>
+      <image src="../../assets/active-a3.png"></image>
+    </view>
+    <view>
+      <text>用</text>
+      <text>户</text>
+      <text>密</text>
+      <text>码：</text>
+    </view>
+    <view>
+      <input bindinput="bindinputPassword1" maxlength="16" type="password" placeholder="请输入密码" placeholder-style="font-size:34rpx; color:#666666;" />
+    </view>
+  </view>
+  <!-- 确认密码 -->
+  <view class="active-a1" wx:if="{{userInfo.userstatus == -1}}">
+    <view>
+      <image src="../../assets/active-a3.png"></image>
+    </view>
+    <view>
+      <text>确</text>
+      <text>认</text>
+      <text>密</text>
+      <text>码：</text>
+    </view>
+    <view>
+      <input bindinput="bindinputPassword2" maxlength="16" type="password" placeholder="请确认密码" placeholder-style="font-size:34rpx; color:#666666;" />
+    </view>
+  </view>
+  <!-- 地址 -->
+  <view class="active-a1" style="margin-top: 50rpx;">
+    <view>
+      <image src="../../assets/active-a3.png"></image>
+    </view>
+    <view>
+      <text>联</text>
+      <text>系</text>
+      <text>地</text>
+      <text>址：</text>
+    </view>
+    <view>
+      <input bindinput="bindinputAddress" type="text" value="{{userInfo.userareas}}" placeholder="请输入联系地址" placeholder-style="font-size:34rpx; color:#666666;" />
+    </view>
+  </view>
+  <!-- 店面 -->
+  <view class="active-a1">
+    <view>
+      <image src="../../assets/active-a3.png"></image>
+    </view>
+    <view>
+      <text>店</text>
+      <text>面：</text>
+    </view>
+    <view style="flex: 1;">
+      <view class="active-aaa" wx:if="{{userInfo.userstatus != -1 ? true : false}}">{{userInfo.romid}}</view>
+      <picker wx:if="{{userInfo.userstatus == -1 ? true : false}}" style="width: 100%;" bindchange="bindPickerstore" value="{{storeIndex}}" range="{{store}}">
+        <view class="picker">{{store[storeIndex]}}
+        </view>
+      </picker>
+    </view>
+  </view>
+  <!-- 礼包 -->
+  <view class="activate-libao" wx:if="{{userInfo.userstatus == -1}}">
+    <scroll-view scroll-X style="width: 100%;">
+      <view class="activate-l-suo">
+        <view class="{{datasIndex == index ? 'active-active active-danyi' : 'active-danyi'}}" wx:for="{{datas}}" wx:key="{{index}}" bindtap="bindtapXuanze" data-datasIndex="{{index}}">
+          <image src="{{baseUrl}}{{item.goodsthums}}"></image>
+          <view>
+            <view>{{item.goodsname}}</view>
+            <view>￥{{item.marketprice}}</view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  <!-- 选中的礼包 -->
+  <view class="active-active active-danyi" style="width: 100%;margin-top: 30rpx;" wx:if="{{userInfo.userstatus == 1}}">
+    <image src="{{baseUrl}}{{datas[0].goodsthums}}"></image>
+    <view style="flex: 1;">
+      <view>{{datas[0].goodsname}}</view>
+      <view>￥{{datas[0].marketprice}}</view>
+    </view>
+  </view>
+  <!-- 按钮 -->
+  <view class="active-button" bindtap="bindtapJihuo">
+    <text>{{userInfo.userstatus == -1 ? '立即激活' : '确认修改'}}</text>
+    <image src="../../assets/active-a4.png"></image>
+  </view>
+</view>

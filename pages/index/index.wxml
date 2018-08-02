@@ -1,0 +1,132 @@
+<!-- 头部累计收益 -->
+<view class="position">
+  <view class="index-top">
+    <view class="index-top-image">
+      <image src="../../assets/index-top.png"></image>
+    </view>
+    <view class="index-top-wz">
+      <view style="margin-bottom: 10rpx;">累计收益</view>
+      <view>￥
+        <text>{{personal.bonusmoney}}</text>元</view>
+    </view>
+  </view>
+  <!--余额 -->
+  <view class="index-conter">
+    <view class="index-conter-ye">
+      <view>
+        <text>我的余额：</text>
+        <text>￥{{personal.distributmoney}}</text>
+      </view>
+    </view>
+    <view class="index-conter-bright" bindtap="showPopup">
+      <image src="../../assets/index-tx.png"></image>
+      <text>提现</text>
+    </view>
+  </view>
+</view>
+<!-- 通知 -->
+<view class="index-tongzhi" wx:if="{{!seeting.mallTitle || seeting.mallTitle == '' ? false : true}}">
+  <view>通知</view>
+  <view>{{seeting.malltongzhi}}</view>
+</view>
+<!-- 内容 -->
+<view class="index conter">
+  <!-- 收益分类 -->
+  <scroll-view scroll-x style="height: 120rpx;" scroll-left="{{scrollleft}}">
+    <view class="index-cl">
+      <view class="{{daoIndex == -1 ? 'index-cl-active' : ''}}" bindtap="bindtapIndex">收益明细</view>
+      <view class="{{daoIndex == 4 ? 'index-cl-active' : ''}}" bindtap="bindtapIndex5">商城月度奖金</view>
+      <view class="{{daoIndex == 5 ? 'index-cl-active' : ''}}" bindtap="bindtapIndex6">商城消费推广奖</view>
+      <view class="{{daoIndex == 6 ? 'index-cl-active' : ''}}" bindtap="bindtapIndex7">宝贝掌柜</view>
+      <view class="{{daoIndex == 3 ? 'index-cl-active' : ''}}" bindtap="bindtapIndex4">商城币</view>
+      <view class="{{daoIndex == 2 ? 'index-cl-active' : ''}}" bindtap="bindtapIndex3">店面补贴</view>
+      <view class="{{daoIndex == 0 || daoIndex == 1 || daoIndex == 8 ? 'index-cl-active' : ''}}" bindtap="bindtapIndex1">特别合作</view>
+    </view> 
+  </scroll-view>
+  <!-- 特别合作的分类 -->
+  <view class="index-fenlei" wx:if="{{daoIndex == 0 || daoIndex == 1 || daoIndex == 8 ? true : false}}">
+    <view class="{{daoIndex == 0 ? 'index-fenlei-active' : ''}}" bindtap="bindtapIndex1">天天共享</view>
+    <view class="{{daoIndex == 1 ? 'index-fenlei-active' : ''}}" bindtap="bindtapIndex2">销售奖金</view>
+    <view class="{{daoIndex == 8 ? 'index-fenlei-active' : ''}}" bindtap="bindtapIndex8">店面补贴</view>
+  </view>
+  <!-- 收益凭证1 -->
+  <view class="index-bottom" wx:for="{{datas}}" wx:key="{{index}}">
+    <view>账单流水
+      <text wx:if="{{item.datastatus == 0 ? true : false}}">未读</text>
+    </view>
+    <view class="index-bottom-sy" wx:if="{{item.scoretype == 1}}">+{{item.score}}</view>
+    <view class="index-bottom-zc" wx:if="{{item.scoretype == 2}}">-{{item.score}}</view>
+    <view class="index-bottom-wz">收益时间：
+      <text>{{item.createtime}}</text>
+    </view>
+    <view class="index-bottom-wz">收益类型：
+      <text>{{item.datasrc}}</text>
+    </view>
+    <view class="index-bottom-wz">收益描述：
+      <text>{{item.dataremarks}}</text>
+    </view>
+  </view>
+  <!-- 弹窗 -->
+  <view class="mask" style="opacity: {{mask.opacity}}; display: {{mask.display}};">
+    <view class="return-deposit" style="transform: {{returnDeposit.translateY}}; opacity: {{returnDeposit.opacity}};">
+      <view class="img-wapper">
+        <view>提现</view>
+        <view class="mask-left">
+          <view>
+            <view>姓</view>
+            <view>名：</view>
+          </view>
+          <view>{{personal.realname}}</view>
+        </view>
+        <view class="mask-left">
+          <view>
+            <view>开</view>
+            <view>户</view>
+            <view>行：</view>
+          </view>
+          <view>{{personal.userbankress}}</view>
+        </view>
+        <view class="mask-left">
+          <view>
+            <view>银</view>
+            <view>行</view>
+            <view>卡</view>
+            <view>号：</view>
+          </view>
+          <view>{{personal.userbankcard}}</view>
+        </view>
+        <view class="mask-left">
+          <view>
+            <view>当</view>
+            <view>前</view>
+            <view>额</view>
+            <view>度：</view>
+          </view>
+          <view class="mask-left-ed">￥{{personal.distributmoney}}</view>
+          <!-- <view class="mask-quanbu" bindtap="bindtapSuoyou">全部提现</view> -->
+        </view>
+        <view class="f11-zhu">注：您正在进行提现操作，请确认您的提现信息，提现扣除20% ，转为商城币。</view>
+      </view>
+      <view class="line"></view>
+      <view class="input-wapper b-color">
+        <input value="{{money}}" placeholder-style="color:#666;font-size:34rpx;" type="number" bindinput="bindinputMoney" placeholder="输入提现金额（整百）" />
+      </view>
+      <view class="btn" bindtap="bindtapTixian">确认提现</view>
+      <view class="close" bindtap="handleClosePopup">
+        <image src="../../assets/close.png" style="width: 120rpx;height: 120rpx;margin-top: 30rpx;"></image>
+      </view>
+    </view>
+  </view>
+  <!-- 加载全部 -->
+  <view class="index-jz" wx:if="{{currPage == totalPage}}">已加载全部</view>
+  <view class="index-jz" wx:if="{{!datas || datas.length == 0}}" style="margin-bottom: 100rpx;">暂无数据</view>
+</view>
+<!-- 没有数据时 -->
+<!-- <view class="index-kong-image">
+    <image src="../../assets/index-zw.png"></image>
+  </view>
+  <view>邀请人数更多赚取收益更多呦！~</view>
+  <navigator class="index-kong-button" url="../code/code">
+    <view>邀请好友赚取收益</view>
+    <image src="../../assets/index-gd.png"></image>
+  </navigator> 

@@ -1,0 +1,48 @@
+<!--pages/address/address.wxml-->
+<view class="address conter" wx:if="{{datas.length != 0}}">
+  <!-- 新增按钮 -->
+  <navigator class="address-top" url="../addaddress/addaddress">
+    <view>
+      <image src="../../assets/address-01.png"></image>
+      <text>新增地址</text>
+    </view>
+    <view>
+      <image src="../../assets/address-03.png"></image>
+    </view>
+  </navigator>
+  <!-- 内容 -->
+  <view class="addres">
+    <view class="address-nr" wx:for="{{datas}}" wx:key="{{index}}"  >
+      <view bindtap="bindtapXiugai" data-addressid="{{index}}">
+        <image src="../../assets/address-02.png"></image>
+      </view>
+      <view bindtap="bindtapXiugai" data-addressid="{{index}}">
+        <view>
+          <text>姓名</text>：{{item.username}}</view>
+        <view>
+          <text>手机号</text>：{{item.userphone}}</view>
+        <view>
+          <text>地址</text>：{{item.address}}
+          <text wx:if="{{item.isdefault == 1}}" style="font-size: 34rpx; color: #e8380d;">【默认】</text>
+        </view>
+      </view>
+      <!-- <view class="add-sc" bindtap="bindtapShanchu" data-addressid="{{item.addressid}}">
+        <image src="../../assets/address-04.png"></image>
+      </view> -->
+    </view>
+  </view>
+  <!-- 已加载全部 -->
+  <view class="address-qb">已加载全部</view>
+</view>
+<!-- 没有地址时 -->
+<view wx:if="{{!datas || datas.length == 0}}" class="index-kong">
+  <view class="index-kong-image">
+    <image src="../../assets/address-kong.png"></image>
+  </view>
+  <view>暂无收货地址</view>
+  <view>添加完收货地址才能开始下单哦~</view>
+  <navigator class="index-kong-button" url="../addaddress/addaddress">
+    <view>立即添加</view>
+    <image src="../../assets/index-gd.png"></image>
+  </navigator>
+</view>
